@@ -1,5 +1,12 @@
 Game();
 
+//Inventory
+var inventory = {
+    Hatchet:0,
+    Book:0,
+    Pickaxe:0,
+}
+
 function Game(){
     
     alert("Game Title: Where is Ichabod?");
@@ -43,7 +50,12 @@ function Game(){
                     }
                 }
         function Voidroom(){
-            prompt("Almost instantly, you appear in a white void of what appears to be endless white")
+            prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
+            
+            //Take Backpack
+            if(Voidroom == "take backpack" || Voidroom == "take"){
+                alert("You have recieved Inventory. You can check inventory at anytime by typing 'Inventory' into the prompt box. Keep this in mind, because it will not be listed as an option.")
+            }
         }
 }
         

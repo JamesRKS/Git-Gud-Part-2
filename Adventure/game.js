@@ -1,11 +1,14 @@
-Game();
+
 
 //Inventory
 var inventory = {
-    Hatchet:0,
-    Book:0,
-    Pickaxe:0,
+    backpack:0,
+    hatchet:0,
+    book:0,
+    pickaxe:0,
 }
+
+Game();
 
 function Game(){
     
@@ -19,21 +22,26 @@ function Game(){
     
     function IchabodsRoom(){
         var bedroom1 = prompt("You're brother, Ichabod, hasn't left their room for 5 days now, but since there's no window in his room, there's no way he snuck out. You decided to check on him, but when you opened the door... he's not there. The only thing in the small square room is their bed and a wooden #2 pencil. \n -Take Pencil \n -Leave Room").toLowerCase();
-    }
+    
         
         //Lazy Bum Ending
         if(bedroom1 == "leave room" || bedroom1 == "leave"){
             alert("You just assume that Ichabod is just somewhere else in the house. You never assume anything else, in fact, since you don't seem to care enough to do anything else. If you were just gonna do THAT, why even bother playing this? ALL YOU HAD TO DO WAS PICK UP THE PENCIL AND YOU COULDN'T EVEN BE BOTHERED TO DO THAT! "+playerName+", you have GOT to be the most incompatent user I ever seen! You know what? I'm done for now, if you want to actually play this game, refresh the page, but until then, you get the LAZY BUM ENDING, you lazy A**Hole!");
         }
-        else{
+        if(bedroom1 == "take pencil" || bedroom1 == "take"){
             Pencil();
+        }
+        
+        else{
+            alert("I don't understand");
+            IchabodsRoom();
         }
         //Pick Up Pencil
         function Pencil(){
-            if(bedroom1 == "take pencil" || bedroom1 == "take"){
                 var pencil = prompt("Power surges through your fingers, giving you sight to something not before seen, a floating black keyhole appears right before you and your instinct is to stick the pencil in the keyhole. \n -Stick in \n -Don't, like the wuss you are.").toLowerCase();
-            }
-            if(pencil == "stick in" || pencil == "use"){
+            
+            //Stick in
+            if(pencil == "stick in" || pencil == "use" || pencil == "stick"){
                 Voidroom();
             }
             //Wuss out
@@ -48,15 +56,20 @@ function Game(){
                     alert("Then try again and act like it, "+playerName+"");
                     Pencil();
                     }
+            else{
+                alert("I don't understand");
+                Pencil();
+            }
                 }
         function Voidroom(){
-            prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
+            var Voidroom = prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
             
             //Take Backpack
             if(Voidroom == "take backpack" || Voidroom == "take"){
-                alert("You have recieved Inventory. You can check inventory at anytime by typing 'Inventory' into the prompt box. Keep this in mind, because it will not be listed as an option.")
+                inventory.backpack ++;
+                alert("You have recieved Inventory. You can check inventory at anytime by typing 'Inventory' into the prompt box. Keep this in mind, because it will not be listed as an option at all time.");
             }
         }
 }
         
-    
+}

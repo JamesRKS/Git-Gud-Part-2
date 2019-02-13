@@ -1,5 +1,3 @@
-
-
 //Inventory
 var inventory = {
     backpack:0,
@@ -62,14 +60,32 @@ function Game(){
             }
                 }
         function Voidroom(){
-            var Voidroom = prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
+            var voidroom = prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
             
             //Take Backpack
-            if(Voidroom == "take backpack" || Voidroom == "take"){
-                inventory.backpack ++;
+            if(voidroom == "take backpack" || voidroom == "take"){
+                if(inventory.backpack == 0){
+                inventory.backpack = 1;
                 alert("You have recieved Inventory. You can check inventory at anytime by typing 'Inventory' into the prompt box. Keep this in mind, because it will not be listed as an option at all time.");
+                Voidroom();
+            }
+            
+                if(inventory.backpack == 1){
+                    alert("You already have the backpack, stupid.");
+                    Voidroom();
+                }
+            }
+                
+            if(voidroom == "open door" || voidroom == "open"){
+                if(inventory.backpack == 0){
+                    alert("You should take that backpack first, "+playerName+".");
+                    Voidroom();
+                }
+                
+                if(inventory.backpack == 1){
+                    Tubes();
+                }
             }
         }
-}
-        
+    }
 }

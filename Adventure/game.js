@@ -6,6 +6,9 @@ var inventory = {
     pickaxe:0,
 }
 
+var checkInv = function(){
+    alert("Hatchet: "+inventory.hatchet+"\n Book: "+inventory.book+"\n ???: "+inventory.pickaxe)
+}
 Game();
 
 function Game(){
@@ -60,7 +63,7 @@ function Game(){
             }
                 }
         function Voidroom(){
-            var voidroom = prompt("You're now in a white void, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
+            var voidroom = prompt("You're now in a white void, without the pencil, the only objects in the abyss is a door and an empty backpack. \n -take backpack \n -open door").toLowerCase();
             
             //Take Backpack
             if(voidroom == "take backpack" || voidroom == "take"){
@@ -75,7 +78,8 @@ function Game(){
                     Voidroom();
                 }
             }
-                
+            
+            //Open Door
             if(voidroom == "open door" || voidroom == "open"){
                 if(inventory.backpack == 0){
                     alert("You should take that backpack first, "+playerName+".");
@@ -84,6 +88,34 @@ function Game(){
                 
                 if(inventory.backpack == 1){
                     Tubes();
+                }
+            }
+            
+            //Check Inventory
+            if(voidroom == "inventory"){
+               checkInv();
+            }
+            
+            else{
+                alert("I don't understand")
+                Voidroom();
+            }
+        }
+        
+        function Tubes(){
+            var tubes = prompt("You open the door to a darker room, illuminated by dim green lights and a few flashing red lights. These lights are coming from the bases of three giant glass tubes, the central tube being the one with red lights, which probably has to do with the fact the glass is broken and leaking fluid all over the floor. At the base of the broken tube is something pale, wet and squishy. Probably would be bad to get the attention of it without a weapon or something, good thing you notice a hatchet mounted on the wall next to you. There's a door on the eastern wall (your facing north btw) and that seems like your only way out of this room without backtracking. \n -Take Hatchet \n -Poke it \n -Go to west door \n -Go back").toLowerCase();
+            
+            //Take Hatchet
+            if(tubes == "take hatchet" || tubes == "take"){
+                inventory.hatchet = 1;
+                alert("You take the Hatchet, it's been added to your inventory");
+                Tubes();
+            }
+            
+            //Poke it
+            if(tubes == "poke it" || tubes == "poke"){
+                if(inventory.hatchet == 0){
+                    alert("You dense little- FINE! You poke the OBVIOUSLY DANGEROUS THING at the base of the broken tube, because you're either an idiot or don't mind restarting this game for a cheap laugh, and guess what "+playerName+", it notices. You see it")
                 }
             }
         }

@@ -7,7 +7,7 @@ var inventory = {
 }
 
 var checkInv = function(){
-    alert("Hatchet: "+inventory.hatchet+"\n Book: "+inventory.book+"\n ???: "+inventory.pickaxe)
+    alert("Hatchets: "+inventory.hatchet)
 }
 Game();
 
@@ -27,7 +27,7 @@ function Game(){
         
         //Lazy Bum Ending
         if(bedroom1 == "leave room" || bedroom1 == "leave"){
-            alert("You just assume that Ichabod is just somewhere else in the house. You never assume anything else, in fact, since you don't seem to care enough to do anything else. If you were just gonna do THAT, why even bother playing this? ALL YOU HAD TO DO WAS PICK UP THE PENCIL AND YOU COULDN'T EVEN BE BOTHERED TO DO THAT! "+playerName+", you have GOT to be the most incompatent user I ever seen! You know what? I'm done for now, if you want to actually play this game, refresh the page, but until then, you get the LAZY BUM ENDING, you lazy A**Hole!");
+            alert("You just assume that Ichabod is just somewhere else in the house. You never assume anything else, in fact, since you don't seem to care enough to do anything else. If you were just gonna do THAT, why even bother playing this? ALL YOU HAD TO DO WAS PICK UP THE PENCIL AND YOU COULDN'T EVEN BE BOTHERED TO DO THAT! "+playerName+", you have GOT to be the most incompatent user I ever seen! You know what? I'm done for now, if you want to actually play this game, refresh the page, but until then, you get the LAZY BUM ENDING, which, for some unknown reason, is considered a good ending.");
         }
         if(bedroom1 == "take pencil" || bedroom1 == "take"){
             Pencil();
@@ -115,8 +115,39 @@ function Game(){
             //Poke it
             if(tubes == "poke it" || tubes == "poke"){
                 if(inventory.hatchet == 0){
-                    alert("You dense little- FINE! You poke the OBVIOUSLY DANGEROUS THING at the base of the broken tube, because you're either an idiot or don't mind restarting this game for a cheap laugh, and guess what "+playerName+", it notices. You see it")
+                    alert("You dense little- FINE! You poke the OBVIOUSLY DANGEROUS THING at the base of the broken tube, because you're either an idiot or don't mind restarting this game for a cheap laugh, and guess what "+playerName+", it notices. You see its' deformed face turn towards you. It has a big mouth with LOTS of sharp teeth. You want to know what it's gonna do with them? Eat your freaking face off, because your an idiot and didn't, at the very least, ARM YOURSELF with the hatchet on the wall. You gained the STUPID DEATH ENDING, have fun restarting the game, dumba**!")
                 }
+                
+                if(inventory.hatchet == 1){
+                    alert("You poke the thing... really hard... with your hatchet... it's dead. I guess there's nothing else in here to do, so you walk to the west door and open it, entering the room.")
+                    Puzzle();
+                }
+            }
+             if(tubes == "Go to west door" || tubes == "west door" || tubes == "door"){
+                 alert("You quietly sneak to the west door, thankfully not getting it's attention, and you enter the next room.")
+                 Puzzle();
+             }
+            
+            if(tubes == "Go back" || tubes == "back"){
+                Voidroom();
+            }
+            
+            else{
+                alert("I don't understand")
+                Tubes();
+            }
+        }
+        
+        function Puzzle(){
+            var puzzle = prompt("It's a small room with two buttons on the left wall, a green one and a red one, and across the room is a metal door that can't be opened. \n -press green button \n - press red button \n Hint: You can use the Hatchet Item in this room.").toLowerCase();
+            
+            if(puzzle == "press green button" || puzzle == "green button"){
+                alert("Ding Dong! That's wrong.")
+                Puzzle();
+            }
+            
+            if(puzzle == "press red button" || "red button"){
+                alert("That's the right one, the door opens")
             }
         }
     }

@@ -2,8 +2,7 @@
 var inventory = {
     backpack:0,
     hatchet:0,
-    book:0,
-    pickaxe:0,
+    knowledgeofbrother:0,
 }
 
 var checkInv = function(){
@@ -17,7 +16,11 @@ function Game(){
     
     var playerName = prompt("What is your name?");
     
-    alert("Hello, User "+playerName+", I am HistoryBot! The interactive interface of all the known history of Imagin, The Thirteenth Plane of Artists! Today, we shall be going through the History of Artist 324, Ichabod, through the eyes of his brother, Sophales, but with his name replaced with your name, to add more immersion. You will also be able to get more possible endings outside of what actually happened. (Note: When you get an ending, refresh the page to try for a new ending or terminate window if yo are done.) Click OK to Start");
+    while(!confirm("Are you sure "+playerName+" is right?")){
+        playerName = prompt("What is your REAL name then?");
+    }
+    
+    alert("Hello, User "+playerName+", I am HistoryBot! The interactive interface of all the known history of Imagin, The Thirteenth Plane of Artists! Today, we shall be going through the History of Artist 324, Ichabod, through the eyes of his brother, but with his name replaced with your name, to add more immersion. You will also be able to get more possible endings outside of what actually happened. (Note: When you get an ending, refresh the page to try for a new ending or terminate window if yo are done.) Click OK to Start");
     
     IchabodsRoom();
     
@@ -142,12 +145,67 @@ function Game(){
             var puzzle = prompt("It's a small room with two buttons on the left wall, a green one and a red one, and across the room is a metal door that can't be opened. \n -press green button \n - press red button \n Hint: You can use the Hatchet Item in this room.").toLowerCase();
             
             if(puzzle == "press green button" || puzzle == "green button"){
-                alert("Ding Dong! That's wrong.")
+                alert("Ding Dong! That's wrong.");
                 Puzzle();
             }
             
             if(puzzle == "press red button" || "red button"){
-                alert("That's the right one, the door opens")
+                alert("That's the right one, the door opens and again, since there's nothing else to do in this room, I'll just automatically send you to the next room.")
+                Brother();
+            }
+            
+             if(puzzle == "use hatchet" || puzzle == "hatchet"){
+                 if(inventory.hatchet == 1){
+                     alert("You decide that you don't care about puzzles, you just care about your brother, so you decide to move on by FORCE, and break down the door via your hatchet, despite the fact the door is metal.")
+                     Brother();
+                 }
+                 if (inventory.hatchet == 1){
+                     alert("You don't have one, stupid!")
+                     Puzzle();
+                 }
+             }
+            
+            if(puzzle == "go back" || puzzle == "back"){
+                if(inventory.knowledgeofbrother == 1){
+                    Tubes2();
+                }
+                
+                if(inventory.knowledgeofbrother == 0){
+                    alert("Why would you do that? There's a creepy and probably dangerous thing in there. I'm NOT doing that! It's not like you need anything from there, right? If you really needed something in there, I would of told you. Just figure out the puzzle for now!")
+                    Puzzle();
+                }
+                
+                if(inventory.hatchet == 1){
+                    alert("There's nothing in there for you, you already have the hatchet, go do what you need to actually do.")
+                    Puzzle();
+                }
+            }
+            
+            else{
+                alert("I don't understand")
+                Puzzle();
+            }
+        }
+        
+        function Brother(){
+            inventory.knowledgeofbrother = 1;
+            var brother = prompt("When you enter the big room, the first and only thing you notice is a glass tube, much like the ones a couple rooms back. Inside the tube is your brother! Ichabod's right there, floating in some weird fluid! All you need to do is get him out! \n -Get Ichabod Out \n -Go back").toLowerCase;
+            
+            if(brother == "get ichabod out" || brother == "get ichabod" || brother == "get"){
+                if(inventory.hatchet == 1){
+                    var end = prompt("This will be the end of the game, are you sure you want to "+playerName+"?").toLowerCase;
+                    if(end == yes || end == y){
+                        TrueEnding();
+                    }
+                        
+                    if(end == no || end == n){
+                        alert("Then take your time, no rush. Sure, there's nothing else to do if you're seeing this, but take your time.")
+                        Brother();
+                    }
+                }
+                if(inventory.hatchet == 0){
+                    alert("You look for a way to get Ichabod out, searching for a button or something, but you just can't")
+                }
             }
         }
     }

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible"content="ie=edge">
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/lis/materialize/0.99.0/css/materialize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
         
         <title>My Contacts</title>
         
@@ -49,7 +49,7 @@
                     <a href="#">Ichabod E</a>
                 </li>
                  <li class="collection-item">
-                    <a href="#">Ichabod E2</a>
+                    <a href="#">Ichabod E</a>
                 </li>
                  <li class="collection-item">
                     <a href="#">Ichabod R</a>
@@ -84,5 +84,33 @@
             </ul>
         </div>
         
+        <script>
+            //Get input element
+            let filterInput = document.getElementById('filterInput');
+            //Add event listener
+            filterInput.addEventListener('keyup', filterNames);
+            
+            function filterNames(){
+                //Get value of input
+                let filterValue = document.getElementById('filterInput').value.toUpperCase();
+                
+                //Get names ul
+                let ul = document.getElementById('names');
+                //Get lis from ul
+                let li = ul.querySelectorAll('li.collection-item');
+                
+                //Loop through collection-item lis
+                for(let i = 0;i < li.length;i++){
+                    let a = li[i].getElementsByTagName('a')[0];
+                    //If matched
+                    if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+                        li[i].style.display = '';
+                    } else {
+                        li[i].style.display = 'none'; 
+                    }
+                }
+                
+            }
+        </script>
     </body>
 </html>

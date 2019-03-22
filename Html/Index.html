@@ -35,6 +35,8 @@
                 position: absolute;
                 left: 19px;
                 top:129px;
+                transition: 3s;
+                
             }
             
             div#circle{
@@ -46,6 +48,7 @@
                 position: absolute;
                 left: 90px;
                 top:200px;
+                transition:3s;
             }
             
             div#triangle{
@@ -58,7 +61,37 @@
                 position:absolute;
                 top:250px;
                 left:15px;
-                rotation:90;
+                transition:10s;
+            }
+            
+            img#fire{
+                display: block;
+                width:420px;
+                height:420px;
+                border-radius: 15%;
+                border: solid 10px Green;
+                position: absolute;
+                left: 290px;
+                top: 20px;
+                transition: 1s;
+            }
+            
+            img#fire:hover{
+                width:4500px;
+                height: 42px;
+            }
+            
+            div#triangle:hover{
+                top:2500px;
+            }
+            
+            div#square:hover{
+                transform:rotate(360deg);
+            }
+            
+            div#circle:hover{
+                background-color: aqua;
+                border-color: darkgreen;
             }
             
         </style>
@@ -69,6 +102,8 @@
     <div id="square"></div>
     <div id="circle"></div>
     <div id="triangle"></div>
+    
+    <img src="Fire%20and%20the%20Flames.png" id="fire">
 </body>
 
 </html>

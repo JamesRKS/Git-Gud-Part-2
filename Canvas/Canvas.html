@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id="myCanvas" width="600" height="400" style="border:2px outset #000000;background-color:orange">
+        </canvas>
+        
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            
+            //Create gradient
+            var grd = ctx.createLinearGradient(0,0,400,0)
+            grd.addColorStop(0,"red");
+            grd.addColorStop(1,"orange");
+            
+            //Fill with gradient
+            ctx.fillStyle=grd;
+            ctx.fillRect(0,0,600,400);
+            
+            //Rest of Stuff
+            ctx.fillStyle = "crimson";
+            ctx.fillRect(180,0,240,400);
+            ctx.moveTo(180,0);
+            ctx.lineTo(180,400);
+            ctx.stroke();
+            ctx.moveTo(420,0);
+            ctx.lineTo(420,400);
+            ctx.stroke();
+            ctx.moveTo(0,0);
+            ctx.lineTo(600,400);
+            ctx.stroke();
+            ctx.moveTo(0,400);
+            ctx.lineTo(600,0);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,120,0,2*Math.PI);
+            ctx.fillStyle="orange"
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,100,0,2*Math.PI);
+            ctx.fillStyle="crimson"
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,80,0,2*Math.PI);
+            ctx.fillStyle="orange"
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,60,0,2*Math.PI);
+            ctx.fillStyle="crimson"
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,40,0,2*Math.PI);
+            ctx.fillStyle="orange"
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(300,200,20,0,2*Math.PI);
+            ctx.fillStyle="crimson"
+            ctx.fill();
+            ctx.stroke();
+        </script>
+    </body>
+</html>

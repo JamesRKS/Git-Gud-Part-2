@@ -8,18 +8,18 @@ html,body,div,hi,h2,h3,h4,h5,h6,p,ul,ol,li,header,footer,nav{
 
 /* Universal Style */
 body{
-    background-color:aqua;
+    background-color:azure;
 }
 div#container{
     width:1200px;
     height:800px;
-    background-color:aquamarine
+    background-color:darkcyan
 }
 
 header{
     width:95.9%;
     padding:25px;
-    background-color: cornflowerblue;
+    background-color: darkblue;
 }
 
 header h1{
@@ -31,6 +31,7 @@ header h1{
 div#content{
     width:100%;
     background-color:aliceblue;
+    font-family:cursive
 }
 
 nav{
@@ -43,9 +44,16 @@ nav ul{
     margin:auto;
     font-family:monospace;
     font-size:1.2em;
+    list-style:none;
 }
 
 nav ul li{
     float:left;
-    padding:5p 10px;
+    padding-top:5p;
+    padding-bottom:5px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.keepopen{
+    clear:both;
 }

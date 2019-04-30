@@ -32,6 +32,11 @@ nav{
     width:100%;
     background-color: darkcyan;
 }
+header img#applogo{
+    display:block;
+    margin:auto;
+    
+}
 nav ul{
     display:block;
     margin:auto;

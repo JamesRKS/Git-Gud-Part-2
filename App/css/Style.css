@@ -7,11 +7,11 @@ html,body,div,hi,h2,h3,h4,h5,h6,p,ul,ol,li,header,footer,nav{
 }
 /* Universal Style */
 body{
-    background-color:azure;
+    background-color:darkcyan;
 }
 div#container{
     width:100%;
-    background-color:darkcyan
+    background-color:darkcyan;
 }
 header{
     width:95.9%;
@@ -22,22 +22,23 @@ header h1{
     color:#00cca5;
     font-family:"Roboto",sans-serif;
     font-size:2.7em;
+    text-align: center;
 }
 div#content{
     width:100%;
     background-color:aliceblue;
     font-family:cursive
 }
-nav{
+/*nav{
     width:100%;
     background-color: darkcyan;
-}
+}*/
 header img#applogo{
     display:block;
     margin:auto;
-    
+    width:100px;
 }
-nav ul{
+/*nav ul{
     display:block;
     margin:auto;
     font-family:monospace;
@@ -58,6 +59,28 @@ nav ul li a:hover{
     background-color: antiquewhite;
     color: darkslategray;
 }
+*/.icon-bar {
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  background-color: darkblue;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: aliceblue;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: cyan;
+}
+/*
 footer{
     position: absolute;
     bottom:0;
@@ -79,3 +102,4 @@ div.keepOpen{
         text-align:center;
     }
 }
+*/

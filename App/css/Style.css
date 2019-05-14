@@ -43,6 +43,7 @@ page h4{
 }
 page h5{
     font-family: sans-serif;
+    text-align: center;
 }
 div#content{
     width:100%;

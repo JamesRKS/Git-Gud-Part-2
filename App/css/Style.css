@@ -8,13 +8,15 @@ html,body,div,hi,h2,h3,h4,h5,h6,p,ul,ol,li,header,footer,nav{
 /* Universal Style */
 body{
     background-color:darkcyan;
+    width:98%;
+    height:900px;
 }
 div#container{
     width:100%;
     background-color:darkcyan;
 }
 header{
-    width:95.9%;
+    width:100%;
     padding:25px;
     background-color: darkblue;
 }
@@ -46,7 +48,7 @@ page h5{
     text-align: center;
 }
 div#content{
-    width:100%;
+    width:105%;
     background-color:aliceblue;
     font-family:cursive
 }
@@ -81,7 +83,7 @@ nav ul li a:hover{
     color: darkslategray;
 }
 */.icon-bar {
-  position:absolute;
+  position:fixed;
   bottom:0;
   width: 100%;
   background-color: darkblue;
@@ -92,7 +94,7 @@ nav ul li a:hover{
   float: left;
   width: 20%;
   text-align: center;
-  padding: 12px 0;
+  padding:12px 0;
   transition: all 0.3s ease;
   color: aliceblue;
   font-size: 36px;
